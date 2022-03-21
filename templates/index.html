@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        ul {
+            display: table;
+            margin: 0 auto;
+          }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Saved Tracks</title>
+    <!-- #bootstrap 4 cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    
+</head>
+<body>
+    <br><br><br>
+    <!-- bootstrap centered big button -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <a href="https://accounts.spotify.com/authorize?client_id=65b513d38c2243e2bc265083fba75249&response_type=code&redirect_uri=http://localhost:8000&scope=user-library-read" class="btn btn-primary btn-lg">
+                        Get User Saved Tracks
+                    </a>
+                </div>
+                {% if code != None %}
+                <!-- jinja for loop for tracks -->
+                <a href="/static/saved.txt" download>
+                    <button class="btn btn-primary">Download as txt file</button></a>
+                    <br><br>
+                    <h1 class="text-center">Your Saved Tracks</h1>
+                    <ul>
+                        {% for track in tracks %}
+                            <li>
+                                <h6>{{ track }}</h6>
+                                
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                {{href}}
+                {%endif%}
+            </btn>
+            </div>
+        </div>
+</body>
+</html>
