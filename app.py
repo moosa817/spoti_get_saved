@@ -10,7 +10,7 @@ def index():
 
     code = request.args.get('code')
     if code != {}:
-        try:
+
             fo = open("static/saved.txt","w")
             fo.write("")
             tracks = get_saved.liked(code)
@@ -18,8 +18,6 @@ def index():
                 f = open('static/saved.txt','a')
                 f.write(i+"\n")
             return render_template('index.html',code=code,tracks=tracks,href="saved.txt")
-        except:
-            return render_template('index.html',code=code)
     else:
         return render_template('index.html')
 
