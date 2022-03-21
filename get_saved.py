@@ -21,7 +21,7 @@ def liked(access_code):
     data = {
     'grant_type': 'authorization_code',
     'code': access_code,
-    'redirect_uri': 'http://localhost:8000'
+    'redirect_uri': 'https://spoti-get-saved.herokuapp.com'
     }
 
     r = requests.post(token_url,data=data,headers=header)
