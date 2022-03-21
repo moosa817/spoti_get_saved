@@ -9,8 +9,9 @@ def index():
     # if method get
 
     code = request.args.get('code')
-    if code != {}:
-
+    if code != None:
+            print(code)
+            print("im going here")
             fo = open("static/saved.txt","w")
             fo.write("")
             tracks = get_saved.liked(code)
@@ -19,8 +20,8 @@ def index():
                 f.write(i+"\n")
             return render_template('index.html',code=code,tracks=tracks,href="saved.txt")
     else:
-        return render_template('index.html')
+        return render_template('index.html',code=None,tracks=None)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True,port=8000)
