@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/',methods=['GET'])
 def index():
     # if method get
-     o= request.environ.get('HTTP_X_REAL_IP', request.remote_addr)  # get the ip address
+    o= request.environ.get('HTTP_X_REAL_IP', request.remote_addr)  # get the ip address
     print(o)
 
     code = request.args.get('code')
