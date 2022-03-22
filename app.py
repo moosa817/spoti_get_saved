@@ -9,6 +9,7 @@ def index():
     # if method get
     o= request.environ.get('HTTP_X_REAL_IP', request.remote_addr)  # get the ip address
     print(o)
+    print(request.remote_addr)
 
     code = request.args.get('code')
     if code != None:
